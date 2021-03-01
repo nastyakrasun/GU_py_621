@@ -12,4 +12,5 @@ seconds = time % 60
 minutes = time // 60
 hours = minutes // 60
 
-print(f'{hours}:{minutes}:{seconds}')
+print(f'{hours}:{minutes}:{seconds}')  
+#print(f'{hours:02}:{minutes:02}:{seconds:02}')  # добивание 2х знаков (в случае необходимости - нолями)
