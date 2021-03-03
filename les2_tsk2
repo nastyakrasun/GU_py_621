@@ -21,3 +21,8 @@ while j < len(array)-1:
     j += 2
 
 print(f'Преобразованный массив: {array}')
+
+#my_list = list(input('Введите список: ')  # преобразовали строку в массив с помощью функции list()
+#for i in range(1, my_list, 2):  # range(start:stop:step)
+    #my_list[i-1], my_list[i] = my_list[i], my_list[i-1]
+#print(f'Преобразованный список: {my_list}')
