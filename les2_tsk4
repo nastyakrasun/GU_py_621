@@ -17,3 +17,7 @@ array = line.split()
 
 for i in range(len(array)):
     print(f'строка {i+1}: {resline(array[i])}')
+    
+#решение без написания функции
+#for i, word in enumerate(array):  # enumerate() - функция, нумерующая значения по порядку
+    #print(i, word[:10])
