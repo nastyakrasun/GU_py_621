@@ -1,0 +1,18 @@
+"""
+Задача5. Создать (программно) текстовый файл, записать в него программно набор чисел,
+разделенных пробелами. Программа должна подсчитывать сумму чисел в файле
+и выводить ее на экран.
+Решение:
+"""
+with open('les5_tsk5.txt', 'w+', encoding='utf-8') as obj_write:
+    text = input('Введите набор чисел, разделённых пробелами: ')
+    obj_write.write(text)  # записать в файл программно набор чисел, разделенных пробелами
+with open('les5_tsk5.txt', 'r+', encoding='utf-8') as obj_read:
+    for line in obj_read:
+        numbers = line.split()
+    i = 0
+    while i < len(numbers):
+        numbers[i] = float(numbers[i])
+        i += 1
+result = sum(numbers)
+print(result)  # Программа должна подсчитывать сумму чисел в файле и выводить ее на экран
