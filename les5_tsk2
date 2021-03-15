@@ -1,0 +1,13 @@
+"""
+Задача2. Создать текстовый файл (не программно), сохранить в нем несколько строк,
+выполнить подсчет количества строк, количества слов в каждой строке.
+Решение:
+"""
+f_obj = open('les5_tsk2.txt', encoding='utf-8')
+number_of_lines = 0
+words_in_line = 0
+for line in f_obj:
+    words_in_line = len(line.split())
+    number_of_lines += 1
+    print(f'{number_of_lines} строка - {words_in_line} слов')
+print(f'{number_of_lines} строк в документе')
