@@ -1,0 +1,74 @@
+"""
+Задача4. Реализуйте базовый класс Car. У данного класса должны быть следующие атрибуты: speed, color, name, is_police (булево).
+А также методы: go, stop, turn(direction), которые должны сообщать, что машина поехала, остановилась, повернула (куда).
+Опишите несколько дочерних классов: TownCar, SportCar, WorkCar, PoliceCar.
+Добавьте в базовый класс метод show_speed, который должен показывать текущую скорость автомобиля.
+Для классов TownCar и WorkCar переопределите метод show_speed.
+При значении скорости свыше 60 (TownCar) и 40 (WorkCar) должно выводиться сообщение о превышении скорости.
+Создайте экземпляры классов, передайте значения атрибутов. Выполните доступ к атрибутам, выведите результат.
+Выполните вызов методов и также покажите результат.
+Решение:
+"""
+class Car:
+    def __init__(self, speed=0, color=None, name=None, is_police=None):
+        self.speed = speed
+        self.color = color
+        self.name = name
+        self.is_police = is_police
+
+    def go(self):
+        return 'car is on ride'
+
+    def stop(self):
+        return 'car has stopped'
+
+    def turn(self, direction=None):
+        return f'car has turned {direction}'
+
+    def show_speed(self):
+        return f'car speed is {self.speed}'
+
+my_car = Car(75, 'black', 'M375NJ')
+print(my_car.go())
+print(my_car.stop())
+print(my_car.turn('left'))
+print(my_car.show_speed())
+
+class TownCar(Car):
+    def show_speed(self):
+        if self.speed > 60:
+            print('!speed limit 60!')
+        return f'car speed is {self.speed}'
+
+class SportCar(Car):
+    def max_speed(self):
+        print('max speed is 200')
+
+class WorkCar(Car):
+    def show_speed(self):
+        if self.speed > 40:
+            print('!speed limit 40!')
+        return f'car speed is {self.speed}'
+
+class PoliceCar(Car):
+    def on_duty(self, duty='no'):
+        if duty == 'yes':
+            print('car is on duty')
+        else:
+            print('car is ready for a duty')
+
+town_car = TownCar(75, 'white', 'F741UO')
+print(town_car.go())
+print(town_car.stop())
+print(town_car.turn('right'))
+print(town_car.show_speed())
+
+work_car = WorkCar(75, 'indigo', 'W123LK')
+print(work_car.go())
+print(work_car.stop())
+print(work_car.turn())
+print(work_car.show_speed())
+
+p = PoliceCar(100, 'white', 'A753PH')
+print(p.name)
+p.on_duty()
